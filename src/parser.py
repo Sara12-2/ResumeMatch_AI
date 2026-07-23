@@ -52,3 +52,43 @@ def clean_text(text: str) -> str:
 def load_document(source) -> str:
     """extract_text() + clean_text() in one call — the normal entry point."""
     return clean_text(extract_text(source))
+
+
+# Common resume section headers, lowercased. Section detection is a
+# heuristic line-match against this list, not a general-purpose resume
+# parser - unusual or missing headers just fall under "Header" (see
+# README Limitations).
+SECTION_HEADERS = {
+    "summary", "objective", "profile", "about", "about me",
+    "skills", "technical skills", "core competencies", "key skills",
+    "experience", "work experience", "professional experience",
+    "employment history", "work history",
+    "education", "academic background",
+    "projects", "personal projects", "key projects",
+    "certifications", "certificates", "licenses",
+    "achievements", "awards", "accomplishments",
+}
+
+_HEADER_LINE_RE = re.compile(r"^[A-Za-z][A-Za-z /&-]{1,40}$")
+
+
+def split_into_sections(text: str) -> dict:
+    """Split resume text into sections keyed by detected header name.
+
+    Scans for short standalone lines matching a known header (case-
+    insensitive, see SECTION_HEADERS). Text before the first detected
+    header - and the whole resume, if no header is recognized - is
+    grouped under "Header".
+    """
+    sections: dict[str, list[str]] = {"Header": []}
+    current = "Header"
+
+    for line in text.split("\n"):
+        stripped = line.strip().rstrip(":")
+        if stripped.lower() in SECTION_HEADERS and _HEADER_LINE_RE.match(stripped):
+            current = stripped.title()
+            sections.setdefault(current, [])
+            continue
+        sections[current].append(line)
+
+    return {name: "\n".join(lines).strip() for name, lines in sections.items()}

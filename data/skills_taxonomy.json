@@ -1,0 +1,97 @@
+{
+  "programming_languages": {
+    "Python": ["python"],
+    "JavaScript": ["javascript", "js"],
+    "TypeScript": ["typescript", "ts"],
+    "Java": ["java"],
+    "C++": ["c++", "cpp"],
+    "C#": ["c#", "csharp"],
+    "Go": ["go", "golang"],
+    "Rust": ["rust"],
+    "Ruby": ["ruby"],
+    "PHP": ["php"],
+    "SQL": ["sql"],
+    "Swift": ["swift"],
+    "Kotlin": ["kotlin"],
+    "R": ["r programming", "r language"]
+  },
+  "web_frameworks": {
+    "Flask": ["flask"],
+    "Django": ["django"],
+    "FastAPI": ["fastapi"],
+    "React": ["react", "react.js", "reactjs"],
+    "Angular": ["angular"],
+    "Vue.js": ["vue", "vue.js", "vuejs"],
+    "Next.js": ["next.js", "nextjs"],
+    "Express.js": ["express", "express.js", "expressjs"],
+    "Spring Boot": ["spring boot", "spring"],
+    "ASP.NET": ["asp.net", "aspnet"]
+  },
+  "databases": {
+    "PostgreSQL": ["postgresql", "postgres"],
+    "MySQL": ["mysql"],
+    "MongoDB": ["mongodb", "mongo"],
+    "Redis": ["redis"],
+    "SQLite": ["sqlite"],
+    "Elasticsearch": ["elasticsearch"],
+    "DynamoDB": ["dynamodb"],
+    "Cassandra": ["cassandra"],
+    "Oracle Database": ["oracle db", "oracle database"]
+  },
+  "cloud_devops": {
+    "AWS": ["aws", "amazon web services"],
+    "Azure": ["azure", "microsoft azure"],
+    "GCP": ["gcp", "google cloud", "google cloud platform"],
+    "Docker": ["docker"],
+    "Kubernetes": ["kubernetes", "k8s"],
+    "Terraform": ["terraform"],
+    "Jenkins": ["jenkins"],
+    "GitHub Actions": ["github actions"],
+    "CI/CD": ["ci/cd", "continuous integration", "continuous deployment"],
+    "Ansible": ["ansible"],
+    "Nginx": ["nginx"]
+  },
+  "data_and_ml": {
+    "Pandas": ["pandas"],
+    "NumPy": ["numpy"],
+    "scikit-learn": ["scikit-learn", "sklearn"],
+    "TensorFlow": ["tensorflow"],
+    "PyTorch": ["pytorch"],
+    "Keras": ["keras"],
+    "spaCy": ["spacy"],
+    "NLTK": ["nltk"],
+    "Tableau": ["tableau"],
+    "Power BI": ["power bi", "powerbi"],
+    "Apache Spark": ["spark", "apache spark"],
+    "Hadoop": ["hadoop"],
+    "Excel": ["excel", "microsoft excel"]
+  },
+  "tools_and_practices": {
+    "Git": ["git"],
+    "Linux": ["linux"],
+    "Bash": ["bash", "shell scripting"],
+    "REST API": ["rest api", "rest apis", "restful api"],
+    "GraphQL": ["graphql"],
+    "Jira": ["jira"],
+    "Agile": ["agile"],
+    "Scrum": ["scrum"],
+    "Figma": ["figma"]
+  },
+  "testing": {
+    "pytest": ["pytest"],
+    "JUnit": ["junit"],
+    "Selenium": ["selenium"],
+    "Cypress": ["cypress"],
+    "Jest": ["jest"],
+    "Unit Testing": ["unit testing", "unit tests"]
+  },
+  "soft_skills": {
+    "Communication": ["communication"],
+    "Leadership": ["leadership"],
+    "Teamwork": ["teamwork", "team player"],
+    "Problem Solving": ["problem solving", "problem-solving"],
+    "Project Management": ["project management"],
+    "Mentoring": ["mentoring", "mentorship"],
+    "Time Management": ["time management"]
+  }
+}
