@@ -1,0 +1,28 @@
+Job Title: Data Analyst
+
+About the Role
+We're hiring a Data Analyst to support our finance and marketing teams
+with reporting, forecasting, and ad-hoc analysis.
+
+Responsibilities
+- Write SQL queries against our data warehouse to answer business
+  questions.
+- Build and maintain dashboards in Tableau or Power BI.
+- Use Python (pandas) for data cleaning and forecasting models.
+- Perform statistical analysis, including A/B test evaluation.
+- Present insights clearly to non-technical stakeholders.
+
+Required Qualifications
+- 2+ years of experience in a data analyst or similar role.
+- Strong SQL skills.
+- Experience with Tableau or Power BI.
+- Working knowledge of Python for data analysis (pandas, NumPy).
+- Comfortable with Excel for quick analysis.
+- Excellent communication skills.
+
+Nice to Have
+- Experience with forecasting or financial modeling.
+- Familiarity with a cloud data warehouse (e.g. Snowflake, BigQuery).
+
+Education
+Bachelor's degree in Statistics, Economics, or a related quantitative field.

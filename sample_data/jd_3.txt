@@ -1,0 +1,28 @@
+Job Title: Frontend Developer (React)
+
+About the Role
+We're looking for a Frontend Developer to build and maintain our React-
+based web application, working closely with designers and backend
+engineers.
+
+Responsibilities
+- Build responsive UI components in React and TypeScript.
+- Translate Figma designs into accessible, pixel-accurate interfaces.
+- Write unit and component tests with Jest.
+- Integrate REST APIs for product and checkout features.
+- Collaborate with backend engineers using Git and code review.
+
+Required Qualifications
+- 2+ years of experience with React and JavaScript/TypeScript.
+- Strong CSS and responsive design skills.
+- Experience with Figma-to-code workflows.
+- Experience writing tests with Jest or a similar framework.
+- Familiarity with REST API integration.
+
+Nice to Have
+- Experience with Next.js.
+- Familiarity with GraphQL.
+- Experience with design systems or component libraries.
+
+Education
+Bachelor's degree in Computer Science or equivalent practical experience.

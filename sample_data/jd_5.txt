@@ -1,0 +1,27 @@
+Job Title: Machine Learning Engineer
+
+About the Role
+We are hiring a Machine Learning Engineer to design, train, and deploy
+models that power our recommendation system.
+
+Responsibilities
+- Build and train models using Python, scikit-learn, and PyTorch.
+- Design data pipelines with Pandas and NumPy for feature engineering.
+- Deploy models to production using Docker and Kubernetes.
+- Monitor model performance and retrain as needed.
+- Collaborate with data engineers on AWS-based infrastructure.
+
+Required Qualifications
+- 3+ years of experience building machine learning models in Python.
+- Strong knowledge of scikit-learn, PyTorch, or TensorFlow.
+- Experience with Pandas and NumPy for data processing.
+- Familiarity with Docker and cloud deployment (AWS preferred).
+- Solid understanding of statistics and model evaluation.
+
+Nice to Have
+- Experience with NLP libraries such as spaCy or NLTK.
+- Familiarity with Kubernetes for model serving at scale.
+
+Education
+Master's degree in Computer Science, Statistics, or a related field
+preferred.

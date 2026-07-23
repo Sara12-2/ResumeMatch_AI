@@ -1,0 +1,27 @@
+Job Title: DevOps Engineer
+
+About the Role
+We need a DevOps Engineer to own our CI/CD pipelines and cloud
+infrastructure as we scale our Kubernetes-based platform.
+
+Responsibilities
+- Design and maintain Terraform modules for AWS infrastructure.
+- Operate and scale our Kubernetes clusters.
+- Build and maintain CI/CD pipelines (GitHub Actions or Jenkins).
+- Automate configuration management with Ansible.
+- Write Bash scripts and maintain Linux servers.
+- Set up monitoring and alerting for production systems.
+
+Required Qualifications
+- 3+ years of experience in a DevOps or SRE role.
+- Strong experience with Docker and Kubernetes.
+- Hands-on experience with Terraform and AWS (EC2, S3, Lambda).
+- Experience with CI/CD tools such as GitHub Actions or Jenkins.
+- Comfortable with Linux administration and Bash scripting.
+
+Nice to Have
+- Experience with Ansible or a similar configuration management tool.
+- Familiarity with GCP or Azure in addition to AWS.
+
+Education
+Bachelor's degree in Computer Science, IT, or equivalent experience.

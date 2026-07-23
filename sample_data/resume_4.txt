@@ -1,0 +1,27 @@
+Ali Raza
+DevOps Engineer
+
+Summary
+DevOps engineer with 5 years of experience automating infrastructure
+and deployment pipelines for cloud-native applications.
+
+Skills
+Docker, Kubernetes, Terraform, AWS (EC2, S3, Lambda), Jenkins, GitHub
+Actions, CI/CD, Ansible, Linux, Bash, monitoring and alerting.
+
+Experience
+DevOps Engineer, CloudNine Systems (2021 - Present)
+- Migrated a monolithic application to Kubernetes, reducing deployment
+  time from 45 minutes to 5 minutes.
+- Wrote Terraform modules to provision AWS infrastructure (EC2, S3,
+  Lambda) across three environments.
+- Built CI/CD pipelines with GitHub Actions and Jenkins for 12
+  microservices.
+- Automated configuration management with Ansible.
+
+Systems Administrator, DataHost Ltd (2019 - 2021)
+- Managed Linux servers and wrote Bash automation scripts.
+- Set up Jenkins pipelines for nightly builds.
+
+Education
+B.S. in Information Technology, Coastal University (2015 - 2019)

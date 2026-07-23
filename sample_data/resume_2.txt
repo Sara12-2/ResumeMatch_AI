@@ -1,0 +1,29 @@
+Imran Qureshi
+Data Analyst
+
+Summary
+Data analyst with 4 years of experience turning raw sales and marketing
+data into reporting dashboards and forecasts for retail clients.
+
+Skills
+SQL, Python (pandas, NumPy), Excel, Tableau, Power BI, statistical
+analysis, A/B testing, data cleaning, communication.
+
+Experience
+Data Analyst, RetailWorks Inc (2022 - Present)
+- Built weekly Tableau dashboards tracking sales performance across 40+
+  stores.
+- Wrote complex SQL queries against a PostgreSQL warehouse to support
+  ad-hoc reporting requests.
+- Used Python and pandas to automate monthly forecasting reports,
+  cutting report turnaround from 2 days to 2 hours.
+- Presented findings to non-technical stakeholders in weekly review
+  meetings.
+
+Junior Analyst, MarketMetrics Ltd (2020 - 2022)
+- Cleaned and validated survey data in Excel and Python.
+- Built Power BI reports for the marketing team.
+- Assisted with A/B test analysis for email campaigns.
+
+Education
+B.S. in Statistics, National University (2016 - 2020)

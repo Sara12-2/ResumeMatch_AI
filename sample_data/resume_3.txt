@@ -1,0 +1,30 @@
+Hina Tariq
+Frontend Developer
+
+Summary
+Frontend developer with 3 years of experience building responsive,
+accessible web interfaces with React and TypeScript.
+
+Skills
+JavaScript, TypeScript, React, Next.js, HTML, CSS, Figma, Jest, Git,
+REST API integration, responsive design.
+
+Experience
+Frontend Developer, PixelCraft Studio (2022 - Present)
+- Built and maintained a React + Next.js e-commerce storefront used by
+  50,000+ monthly visitors.
+- Converted Figma designs into responsive, accessible React components.
+- Wrote unit and component tests with Jest, keeping coverage above 80%.
+- Integrated REST APIs for product catalog and checkout flows.
+
+Junior Web Developer, BrightWeb Agency (2021 - 2022)
+- Built marketing landing pages using HTML, CSS, and vanilla JavaScript.
+- Collaborated with designers to implement pixel-perfect UI from Figma
+  mockups.
+
+Education
+B.S. in Computer Science, Riverside Institute of Technology (2017 - 2021)
+
+Projects
+Personal Portfolio Site - Built with Next.js and TypeScript, deployed on
+Vercel, includes a blog powered by a headless CMS.
