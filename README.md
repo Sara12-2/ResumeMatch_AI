@@ -67,7 +67,7 @@ functional without it.
 | Match scoring | `scikit-learn` `TfidfVectorizer` + `cosine_similarity` | The deterministic core - see "How the matching actually works" below |
 | Skill extraction | `spaCy` (`en_core_web_sm`) `PhraseMatcher` + curated JSON taxonomy | Taxonomy phrase-matching drives matched/missing/extra; spaCy NER is a secondary, documented signal (see Limitations) |
 | PDF parsing | `pypdf` | Per-page text extraction |
-| Web interface | `Flask` | Server-rendered, single form + results page |
+| Web interface | `Flask` + vanilla JS + CSS | Server-rendered single-page form/results, drag-and-drop uploads, glassmorphic UI with light/dark theme support, inline SVG icons (no icon font/CDN, no emoji) |
 | CLI | `argparse` | Text or `--json` output for scripting |
 | Optional narrative layer | `groq` Python SDK | Only imported/called if `--narrative`/checkbox is used; app works fully without it |
 | Testing | `pytest` | 16 tests across matcher, skill extractor, recommender |
@@ -216,6 +216,17 @@ python web/app.py
 ```
 Then open `http://localhost:5000`. Port and debug mode can be overridden with
 the `PORT` and `FLASK_DEBUG` environment variables.
+
+The web UI (`web/templates/index.html`) supports drag-and-drop file upload
+(or paste text directly), a "Try an example" dropdown that instantly loads
+one of the 5 `sample_data/` pairs into both fields, a circular match-score
+indicator, and color-coded skill/section tags. It's a glassmorphic design
+(translucent, blurred panels over a gradient background) with hover/focus
+transitions throughout, fully responsive (single column below ~720px), and
+automatically follows the OS light/dark theme via `prefers-color-scheme` -
+verified in both modes, not just the default. Icons are hand-written inline
+SVG throughout - no icon font, no CDN, no emoji - keeping the "runs fully
+offline" claim true for the browser too, not just the scoring engine.
 
 **Optional narrative layer:** copy `.env.example` to `.env` and set
 `GROQ_API_KEY` (get one free at [console.groq.com](https://console.groq.com)).

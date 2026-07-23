@@ -6,6 +6,7 @@ Then open http://localhost:5000. Port and debug mode can be overridden
 with the PORT and FLASK_DEBUG environment variables.
 """
 
+import json
 import os
 import sys
 import tempfile
@@ -25,6 +26,32 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024  # 5 MB uploads
+
+SAMPLE_DIR = Path(__file__).resolve().parent.parent / "sample_data"
+SAMPLE_PAIRS = [
+    {"id": 1, "label": "Backend Engineer (strong match)"},
+    {"id": 2, "label": "Data Analyst (strong match)"},
+    {"id": 3, "label": "Frontend Developer (strong match)"},
+    {"id": 4, "label": "DevOps Engineer (strong match)"},
+    {"id": 5, "label": "Marketing vs. ML Engineer (mismatch demo)"},
+]
+
+
+def _load_sample_pairs() -> list:
+    """Read sample_data/ pairs fresh on each request - it's 5 small text
+    files, cheap enough to not bother caching."""
+    pairs = []
+    for pair in SAMPLE_PAIRS:
+        resume_path = SAMPLE_DIR / f"resume_{pair['id']}.txt"
+        jd_path = SAMPLE_DIR / f"jd_{pair['id']}.txt"
+        if resume_path.exists() and jd_path.exists():
+            pairs.append({
+                "id": pair["id"],
+                "label": pair["label"],
+                "resume": resume_path.read_text(encoding="utf-8"),
+                "jd": jd_path.read_text(encoding="utf-8"),
+            })
+    return pairs
 
 
 def _resolve_input(file_storage, pasted_text: str) -> str:
@@ -82,7 +109,12 @@ def index():
         except Exception:
             error = "Could not process the uploaded files. Please check the format and try again."
 
-    return render_template("index.html", result=result, error=error)
+    return render_template(
+        "index.html",
+        result=result,
+        error=error,
+        sample_pairs_json=json.dumps(_load_sample_pairs()),
+    )
 
 
 if __name__ == "__main__":

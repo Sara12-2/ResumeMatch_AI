@@ -4,3 +4,6 @@ __pycache__/
 .pytest_cache/
 .env
 *.egg-info/
+
+# Personal Obsidian notes vault -- not project documentation, never pushed
+/project-notes/
