@@ -13,11 +13,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from dotenv import load_dotenv
 from flask import Flask, render_template, request
 
 from src.matcher import EmptyDocumentError, compute_match_score, section_contributions
 from src.parser import UnsupportedFileTypeError, load_document, split_into_sections
+from src.recommender import RecommenderError, generate_suggestions
 from src.skill_extractor import analyze_skill_gap
+
+load_dotenv()
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024  # 5 MB uploads
@@ -67,6 +71,12 @@ def index():
                 request.files.get("jd_file"), request.form.get("jd_text", "")
             )
             result = _build_result(resume_text, jd_text)
+
+            if request.form.get("narrative"):
+                try:
+                    result["narrative"] = generate_suggestions(result)
+                except RecommenderError as exc:
+                    result["narrative_error"] = str(exc)
         except (EmptyDocumentError, UnsupportedFileTypeError) as exc:
             error = str(exc)
         except Exception:

@@ -13,9 +13,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from dotenv import load_dotenv
+
 from src.matcher import compute_match_score, section_contributions
 from src.parser import load_document, split_into_sections
+from src.recommender import RecommenderError, generate_suggestions
 from src.skill_extractor import analyze_skill_gap
+
+load_dotenv()
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -30,6 +35,10 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--json", action="store_true", help="Output machine-readable JSON instead of a text report"
+    )
+    parser.add_argument(
+        "--narrative", action="store_true",
+        help="Also generate Groq-powered improvement suggestions (requires GROQ_API_KEY; optional)"
     )
     return parser
 
@@ -70,10 +79,24 @@ def print_report(report: dict) -> None:
         for s in report["section_ranking"]:
             print(f"  {s['section']:<14} {s['score']:>6}%  {s['band']}")
 
+    if report.get("narrative"):
+        print()
+        print("Improvement Suggestions (Groq-generated):")
+        print(report["narrative"])
+    elif report.get("narrative_error"):
+        print()
+        print(f"Narrative suggestions skipped: {report['narrative_error']}")
+
 
 def main(argv=None) -> int:
     args = build_parser().parse_args(argv)
     report = build_report(args.resume, args.jd)
+
+    if args.narrative:
+        try:
+            report["narrative"] = generate_suggestions(report)
+        except RecommenderError as exc:
+            report["narrative_error"] = str(exc)
 
     if args.json:
         print(json.dumps(report, indent=2))

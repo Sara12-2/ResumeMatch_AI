@@ -34,6 +34,11 @@
     table { border-collapse: collapse; width: 100%; margin-top: 8px; }
     th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #eee; }
     .note { color: #888; font-size: 0.85rem; margin-top: 24px; }
+    .narrative-toggle { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #444; }
+    .narrative { margin-top: 24px; padding: 16px; background: #f6f8fc; border-radius: 8px; }
+    .narrative h3 { margin-top: 0; font-size: 0.95rem; }
+    .narrative p { white-space: pre-wrap; margin: 0; }
+    .narrative-unavailable { margin-top: 24px; color: #888; font-size: 0.85rem; }
     @media (max-width: 640px) {
       form { grid-template-columns: 1fr; }
     }
@@ -60,6 +65,10 @@
       <p class="or">&mdash; or paste text below &mdash;</p>
       <textarea name="jd_text" placeholder="Paste job description text here"></textarea>
     </fieldset>
+    <label class="narrative-toggle">
+      <input type="checkbox" name="narrative" value="1">
+      Also generate Groq-powered improvement suggestions (optional, requires <code>GROQ_API_KEY</code>)
+    </label>
     <button type="submit">Analyze Match</button>
   </form>
 
@@ -99,6 +108,15 @@
       <tr><td>{{ s.section }}</td><td>{{ s.score }}%</td><td>{{ s.band }}</td></tr>
       {% endfor %}
     </table>
+
+    {% if result.narrative %}
+    <div class="narrative">
+      <h3>Improvement Suggestions (Groq-generated)</h3>
+      <p>{{ result.narrative }}</p>
+    </div>
+    {% elif result.narrative_error %}
+    <p class="narrative-unavailable">Narrative suggestions skipped: {{ result.narrative_error }}</p>
+    {% endif %}
   </div>
   {% endif %}
 
